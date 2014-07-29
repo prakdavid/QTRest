@@ -7,7 +7,6 @@
 
 #include "controller.h"
 #include "usercontroller.h"
-#include "factory.h"
 
 #include <QRegExp>
 #include <QStringList>

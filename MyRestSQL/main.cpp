@@ -1,8 +1,5 @@
 #include <QCoreApplication>
 #include "myserver.h"
-#include "factory.h"
-
-Factory *Factory::instance = NULL;
 
 int main(int argc, char *argv[])
 {

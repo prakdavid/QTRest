@@ -11,12 +11,6 @@ MyServer::MyServer()
 
 void MyServer::handleRequest(QHttpRequest *req, QHttpResponse *resp)
 {
-    Factory::getInstance()->registerObject<UserController>("UserController");
-
-    Controller*   toto = Factory::getInstance()->getObject("UserController");
-    UserController *user = static_cast<UserController*>(toto);
-    user->toString();
-    Factory::destroyInstance();
 
     // qDebug() << req->methodString();
     // qDebug() << req->method();
