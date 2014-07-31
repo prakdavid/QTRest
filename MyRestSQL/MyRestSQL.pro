@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core network
+QT       += core network xml sql
 
 QT       -= gui
 
@@ -24,12 +24,12 @@ win32 {
 }
 
 SOURCES += main.cpp \
-    myserver.cpp    \
+    myserver.cpp     \
+    controller.cpp     \
     usercontroller.cpp
 
 HEADERS += \
     myserver.h    \
-    controller.h \
-    factory.h     \
+    controller.h    \
     usercontroller.h
 

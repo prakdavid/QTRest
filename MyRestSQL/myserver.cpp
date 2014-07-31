@@ -3,9 +3,7 @@
 MyServer::MyServer()
 {
     QHttpServer *server = new QHttpServer(this);
-    connect(server, SIGNAL(newRequest(QHttpRequest*, QHttpResponse*)),
-        this, SLOT(handleRequest(QHttpRequest*, QHttpResponse*)));
-
+    connect(server, SIGNAL(newRequest(QHttpRequest*, QHttpResponse*)),this, SLOT(handleRequest(QHttpRequest*, QHttpResponse*)));
     server->listen(QHostAddress::Any, 8080);
 }
 
@@ -29,12 +27,8 @@ void MyServer::handleRequest(QHttpRequest *req, QHttpResponse *resp)
 
     if( exp.indexIn(req->path()) != -1 )
     {
-        resp->setHeader("Content-Type", "text/html");
-        resp->writeHead(200);
-
-        QString name = exp.capturedTexts()[1];
-        QString body = tr("<html><head><title>Greeting App</title></head><body><h1>Hello %1!</h1></body></html>");
-        resp->end(body.arg(name).toUtf8());
+        Controller toto;
+        toto.responder(resp, 200);
     }
     else
     {
