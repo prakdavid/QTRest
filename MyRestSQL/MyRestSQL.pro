@@ -16,6 +16,8 @@ CONFIG += debug
 
 TEMPLATE = app
 
+include(qtservice/src/qtservice.pri)
+
 win32 {
     debug: LIBS += -lqhttpserverd
     else: LIBS += -lqhttpserver
@@ -25,11 +27,13 @@ win32 {
 
 SOURCES += main.cpp \
     myserver.cpp     \
+    myservice.cpp     \
     controller.cpp     \
     usercontroller.cpp
 
 HEADERS += \
-    myserver.h    \
-    controller.h    \
+    myserver.h   \
+    myservice.h   \
+    controller.h     \
     usercontroller.h
 

@@ -1,9 +1,11 @@
 #include <QCoreApplication>
-#include "myserver.h"
+
+#include "myservice.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    MyServer server;
+    MyService serv(argc, argv);
+    serv.start();
     return a.exec();
 }

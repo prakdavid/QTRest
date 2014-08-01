@@ -20,6 +20,7 @@ public:
     void dispatcher();
 private slots:
     void handleRequest(QHttpRequest *req, QHttpResponse *resp);
+
 };
 
 #endif // MYSERVER_H

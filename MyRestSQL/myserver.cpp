@@ -4,7 +4,12 @@ MyServer::MyServer()
 {
     QHttpServer *server = new QHttpServer(this);
     connect(server, SIGNAL(newRequest(QHttpRequest*, QHttpResponse*)),this, SLOT(handleRequest(QHttpRequest*, QHttpResponse*)));
-    server->listen(QHostAddress::Any, 8080);
+    if(!server->listen(QHostAddress::Any, 8080))
+    {
+        qDebug() << "Server could not start!";
+    } else {
+        qDebug() << "Server listenning...";
+    }
 }
 
 void MyServer::handleRequest(QHttpRequest *req, QHttpResponse *resp)
